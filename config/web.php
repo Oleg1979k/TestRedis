@@ -25,6 +25,12 @@ return [
             'enablePrettyUrl' => true,  // пока без красивых URL
             'showScriptName' => true,
         ],
+        'assetManager' => [
+            'linkAssets' => true, // вместо копирования Yii будет делать symlink — не всегда возможно в Windows, но попробуйте
+            'dirMode' => 0777,
+            'fileMode' => 0666,
+            'forceCopy' => false,
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
