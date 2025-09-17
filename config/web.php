@@ -11,9 +11,14 @@ return [
         'request' => [
             'cookieValidationKey' => 'secret-key',
         ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
+         'cache' => [
+        'class' => \yii\redis\Cache::class, // ✅ правильно
+        'redis' => [
+            'hostname' => 'redis',
+            'port' => 6379,
+            'database' => 0,
         ],
+    ],
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
